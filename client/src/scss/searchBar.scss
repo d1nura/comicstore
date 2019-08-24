@@ -23,6 +23,7 @@
     word-spacing: 2px;
     margin: 2vh 0 2vh 0;
     &::placeholder {
+      font-size: 1.2vw;
       color: rgb(107, 107, 107);
     }
     &:focus {
