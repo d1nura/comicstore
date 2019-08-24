@@ -1,0 +1,19 @@
+@import "comicStyles";
+@import "responsive";
+@include comicStyles("event");
+
+#eventDetails {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5vw;
+  @include media(768px) {
+    grid-template-columns: repeat(2, 1fr);
+    h3 {
+      font-size: 1rem;
+    }
+  }
+  @include media(350px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

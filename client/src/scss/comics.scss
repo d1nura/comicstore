@@ -1,0 +1,40 @@
+@import "all";
+@import "comicStyles";
+@import "responsive";
+
+@include comicStyles("comic");
+
+#comicDetails {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5vw;
+  h3 {
+    font-size: 1.3vw;
+  }
+  @include media(768px) {
+    grid-template-columns: repeat(3, 1fr);
+    h3 {
+      font-size: 0.8rem;
+    }
+  }
+  @include media(500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#comicBtnSet {
+  //border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  margin: 2vh 0 2rem 0;
+
+  button {
+    @include button(12vw, 8.5vh, 1.2vw);
+    color: white;
+    font-weight: bolder;
+    @include media(768px) {
+      @include button(6.5rem, 8.5vh, 0.8rem);
+    }
+  }
+}

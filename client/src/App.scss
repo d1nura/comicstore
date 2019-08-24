@@ -1,0 +1,24 @@
+.App {
+  position: relative;
+  width: 100%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  background: rgb(255, 186, 186);
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 1px;
+  background: rgb(240, 77, 77);
+}
+#loadingSvg {
+  position: fixed;
+  background: black;
+  top: 50vh;
+  left: 50%;
+  width: 10vw;
+  transform: translate(-50%, -50%);
+  border-radius: 4rem;
+}

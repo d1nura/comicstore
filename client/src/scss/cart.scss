@@ -1,0 +1,205 @@
+@import "responsive";
+
+.cart {
+  position: relative;
+  background: #e62429;
+  overflow: hidden;
+  min-height: 85vh;
+}
+$border-color: #e62429;
+$bac: #ec4141;
+
+.blur {
+  filter: blur(1px);
+}
+
+#cartRows {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 15% 50% 20% 15%;
+  grid-template-rows: 35vh;
+  transition: 0.5s;
+  border-bottom: 1px solid red;
+  #smallCoverPic {
+    // padding: 1vw;
+    align-self: center;
+    justify-self: center;
+    img {
+      width: 10vw;
+      margin-top: 0.5rem;
+    }
+  }
+  p {
+    align-self: center;
+    text-align: center;
+    // line-height: 35vh;
+    // background: $bac;
+    color: rgb(255, 255, 255);
+    font-size: 2vw;
+
+    &:nth-last-child(2) {
+      background: $border-color;
+      border-right: none;
+    }
+    &:nth-child(2) {
+      font-size: 1.6vw;
+    }
+  }
+  @include media(700px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #smallCoverPic {
+      img {
+        width: 5rem;
+      }
+    }
+    #itemTitle {
+      // border: 1px solid rgb(255, 255, 255);
+      width: 90vw;
+      margin: 0.5rem 0 0.5rem 0;
+      font-size: 1rem;
+      line-height: inherit;
+      align-self: center;
+    }
+  }
+}
+
+#btnSet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background: $bac;
+  // border: 1px solid white;
+  #btnSetP {
+    width: 2.5vw;
+    height: 2.5vw;
+    line-height: 2.5vw;
+    border: none;
+    font-weight: inherit;
+    font-size: 1.5vw;
+  }
+  button {
+    width: 3vw;
+    height: 3vw;
+    margin: 0.5vw;
+    background: $bac;
+    color: rgb(255, 255, 255);
+    transition: 0.2s;
+    font-weight: bold;
+    font-size: 1.5vw;
+    &:hover {
+      background: #ffffff;
+      color: rgb(0, 0, 0);
+      border: none;
+    }
+    &:active {
+      border: 2px solid #ffffff;
+    }
+  }
+
+  #ripple {
+    //  border: 1px solid green;
+    width: 2.5vw;
+  }
+  @include media(700px) {
+    width: 95vw;
+    height: 12vh;
+    #btnSetP {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+    button {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+#priceTag {
+  position: relative;
+  align-self: center;
+  p {
+    background: $bac;
+  }
+
+  button {
+    position: absolute;
+    opacity: 1;
+    transition: 0.5s;
+    padding: 0.2vw 0.5vw 0.2vw 0.5vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 120%);
+    font-size: 1vw;
+    color: rgb(255, 255, 255);
+    background: #ec4a4a;
+  }
+  @include media(700px) {
+    // position: absolute;
+    margin-bottom: 0.5rem;
+    bottom: 0;
+    height: 14vh;
+    width: 95vw;
+    button {
+      width: 4rem;
+      font-size: 0.8rem;
+      top: 5vh;
+    }
+    // height: 15vh;
+    p {
+      font-size: 1.2rem;
+      line-height: inherit;
+      margin: 2vh 0 2vh 0;
+    }
+  }
+}
+
+.showTag {
+  #delete {
+    opacity: 1;
+  }
+}
+
+#buyBtn {
+  position: relative;
+  left: 100%;
+  transform: translate(-125%);
+  background: none;
+  color: white;
+  font-size: 1.5vw;
+  border: 1px solid white;
+  padding: 0.5vw 1vw 0.5vw 1vw;
+  margin: 1rem 0 4rem 0;
+  letter-spacing: 2px;
+  transition: 0.5s;
+  &:hover {
+    background: rgb(245, 38, 38);
+  }
+  &:focus {
+    border: 1px solid rgb(233, 44, 44);
+  }
+  @include media(700px) {
+    width: 40vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+  }
+}
+
+#dbConnect {
+  background: #e62429;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-size: 1.2rem;
+  }
+}

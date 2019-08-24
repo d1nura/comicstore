@@ -1,0 +1,65 @@
+@import "responsive";
+
+#comicGen::-webkit-scrollbar {
+  background: rgb(255, 186, 186);
+}
+
+#comicGen::-webkit-scrollbar-thumb {
+  width: 1px;
+  background: rgb(240, 77, 77);
+}
+
+#comicGen {
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
+  //background: bisque;
+
+  display: flex;
+  overflow-x: scroll;
+  a {
+    color: black;
+  }
+
+  img {
+    width: 18vw;
+    margin-right: 2.5vw;
+    box-shadow: 0px 2px 1rem 1px rgb(170, 170, 170);
+    transition: 0.4s;
+    &:hover {
+      transform: translateY(-1%);
+    }
+    @include media(700px) {
+      width: 10rem;
+    }
+  }
+  h3 {
+    font-size: 1.2vw;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    padding: 1vw;
+    @include media(700px) {
+      font-size: 0.8rem;
+    }
+  }
+}
+#loading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 35vh;
+  p {
+    font-weight: bold;
+    margin-top: 2vh;
+  }
+}
+
+#loadingGenSvg {
+  position: relative;
+  background: black;
+  border-radius: 4rem;
+  width: 4rem;
+}

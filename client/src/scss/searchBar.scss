@@ -1,0 +1,109 @@
+@import "responsive";
+
+.searchBar {
+  //   border: 1px solid red;
+  position: relative;
+  width: 100%;
+  height: 12vh;
+  overflow: hidden;
+  z-index: 1;
+  input {
+    position: relative;
+    background: rgb(53, 53, 53);
+    padding-left: 1vw;
+    border: none;
+    width: 50vw;
+    height: 8vh;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 1.5vw;
+    color: rgb(187, 187, 187);
+    outline: none;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    margin: 2vh 0 2vh 0;
+    &::placeholder {
+      color: rgb(107, 107, 107);
+    }
+    &:focus {
+      border: 0.1px solid rgb(78, 78, 78);
+    }
+    @include media(768px) {
+      width: 60vw;
+      font-size: 1rem;
+      &::placeholder {
+        font-size: 1rem;
+        line-height: 8vh;
+      }
+    }
+    @include media(550px) {
+      width: 90vw;
+    }
+  }
+  transition: 0.1s;
+}
+
+#bringDown {
+  height: 0;
+}
+
+.searchResults {
+  position: absolute;
+  left: 50%;
+  transition: 0.5s;
+  transform: translate(-50%);
+  //   border: 1px solid red;
+  height: auto;
+  background: rgb(53, 53, 53);
+  color: black;
+  overflow: hidden;
+  //   padding: 0vh 0 4vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    width: 50vw;
+    // text-align: center;
+    padding: 2vh 0 2vh 1vw;
+    color: white;
+    font-size: 1.4vw;
+    border-bottom: 1px solid rgb(49, 49, 49);
+    transition: 0.2s;
+    &:hover {
+      background: rgb(233, 67, 67);
+      font-size: 1.5vw;
+      //   border: none;
+    }
+  }
+
+  @include media(768px) {
+    p {
+      width: 60vw;
+      font-size: 1rem;
+      padding: 1rem 0.5rem 1rem 0.5rem;
+      &:hover {
+        font-size: inherit;
+      }
+    }
+  }
+  @include media(550px) {
+    p {
+      width: 100vw;
+    }
+  }
+}
+
+#searchLoading {
+  background: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10vh;
+  height: 10vh;
+  img {
+    width: 5vw;
+  }
+  p {
+    font-size: 1.2vw;
+  }
+}

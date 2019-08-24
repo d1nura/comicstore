@@ -1,0 +1,92 @@
+@import "responsive";
+
+@mixin squareStyles($name1, $name2) {
+  .#{$name1} {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 5vh 2.5vw 10vh 2.5vw;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    // grid-template-rows: repeat(2, 51vh);
+    grid-gap: 1.5%;
+    @include media(1024px) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @include media(768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include media(600px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include media(420px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1vw;
+    }
+    @include media(376px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .#{$name2} {
+    position: relative;
+    display: grid;
+    height: 51vh;
+    grid-template-rows: 58% 42%;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 97%, 94% 100%, 0 100%, 0 0%);
+    margin-bottom: 5vh;
+    @include media(768px) {
+      margin-bottom: 0.5rem;
+    }
+    @include media(376px) {
+      height: 60vh;
+    }
+    ##{$name2}Pic {
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: 0.2s;
+      z-index: 3;
+    }
+    transition: 0.2s;
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: #e62429;
+      z-index: 2;
+      transform: translateY(-40.5%);
+      transition: 0.3s;
+    }
+
+    &:hover {
+      ##{$name2}Pic {
+        transform: scale(1.05);
+      }
+      &::before {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  ##{$name2}Title {
+    background: #202020;
+    padding: 10% 10%;
+  }
+
+  ##{$name2}TitleP {
+    color: white;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 1.2vw;
+    position: relative;
+    z-index: 3;
+    color: white;
+    @include media(768px) {
+      font-size: 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.scrollToTop {
+  display: none;
+  border-left: 2px solid rgb(255, 0, 0);
+  border-right: 2px solid rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  width: 6.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  letter-spacing: 1px;
+  text-align: center;
+  transition: 0.2s;
+  z-index: 1000;
+  &:hover {
+    color: rgb(255, 128, 128);
+  }
+}

@@ -1,0 +1,105 @@
+@import "responsive";
+
+.eventsDetails {
+  // border: 1px solid red;
+  position: absolute;
+  width: 100%;
+  //  height: 200vw;
+  background: #e5e5e5;
+  // padding: 0 2.5vw 5vh 2.5vw;
+}
+%bacImg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#eventCoverpic {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  // border: 1px solid blue;
+  @extend %bacImg;
+  clip-path: polygon(0 0, 100% 0%, 100% 82%, 0% 100%);
+  @include media(550px) {
+    height: 50vh;
+  }
+}
+
+#eventDetailBox {
+  position: relative;
+  background: white;
+  width: 93.7vw;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 1rem 5px rgb(196, 196, 196);
+  overflow: hidden;
+  @include media(550px) {
+    grid-template-columns: 100%;
+    height: auto;
+  }
+}
+
+#boxDetails {
+  @extend %bacImg;
+  @include media(550px) {
+    display: none;
+  }
+}
+
+#boxDiscription {
+  align-self: center;
+  padding: 4vw;
+  h1 {
+    font-size: 2.2vw;
+    margin-bottom: 2.5vh;
+  }
+  h4 {
+    font-size: 1.2vw;
+  }
+  p {
+    font-size: 1.4vw;
+    margin: 1vh 0 1.5vh 0;
+    // font-weight: 600;
+  }
+  @include media(768px) {
+    h1 {
+      font-size: 1.6rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+  }
+}
+
+%h1Styles {
+  text-transform: uppercase;
+  font-size: 2.2vw;
+  margin-bottom: 5.5vh;
+  color: rgb(133, 133, 133);
+  @include media(768px) {
+    font-size: 1rem;
+  }
+}
+
+#comicBooks {
+  margin-top: 2vh;
+  padding: 0 2.5vw 10vh 2.5vw;
+  h1 {
+    @extend %h1Styles;
+  }
+}
+
+#eventCharacters {
+  padding: 0 2.5vw 0 2.5vw;
+  margin-top: 10vh;
+  h1 {
+    @extend %h1Styles;
+  }
+}

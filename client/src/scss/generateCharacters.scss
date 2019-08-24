@@ -1,0 +1,32 @@
+@import "responsive";
+
+#characterGen::-webkit-scrollbar {
+  background: rgb(255, 186, 186);
+}
+
+#characterGen::-webkit-scrollbar-thumb {
+  width: 1px;
+  background: rgb(240, 77, 77);
+}
+
+#characterGen {
+  display: flex;
+  height: auto;
+  min-height: 50vh;
+  //@extendoverflow-x: scroll;
+
+  .hero {
+    width: 15vw;
+    margin-right: 2vw;
+    @include media(700px) {
+      width: 8rem;
+    }
+    @include media(600px) {
+      width: 10rem;
+      height: 50vh;
+    }
+  }
+  @include media(700px) {
+    overflow-x: scroll;
+  }
+}

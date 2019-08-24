@@ -1,0 +1,136 @@
+@import "responsive";
+
+.payOut {
+  background: url("../logos/bac.jpg");
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  width: 100%;
+  height: 100vh;
+  @include media(600px) {
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    height: auto;
+  }
+}
+
+$clr: #fd435b;
+$titleClr: rgb(110, 110, 110);
+
+#information {
+  background: white;
+  opacity: 0.9;
+  overflow: hidden;
+  h1 {
+    margin-bottom: 6vh;
+    color: $titleClr;
+    font-size: 2.3vw;
+    font-weight: 400;
+    @include media(600px) {
+      font-size: 1.8rem;
+    }
+  }
+  padding: 2rem 3vw 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  @include media(600px) {
+    // align-items: center;
+  }
+}
+
+#card-details {
+  //   border: 1px solid red;
+  //   background: #fffffd;
+  //   padding: 0.5rem;
+  input {
+    border: none;
+    border-bottom: 2px solid $clr;
+    height: 2.5rem;
+    margin-bottom: 5vh;
+    outline: none;
+    font-size: 2vw;
+    padding-left: 0.5rem;
+    color: $clr;
+    background: none;
+    @include media(600px) {
+      font-size: 1.2rem;
+    }
+  }
+  #group {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-weight: 400;
+      color: $titleClr;
+      font-size: 1vw;
+      margin-bottom: 1vh;
+      @include media(600px) {
+        font-size: 10px;
+      }
+    }
+  }
+  #dates-section {
+    display: flex;
+    justify-content: space-between;
+    // border: 1px solid red;
+    input {
+      width: 12vw;
+      @include media(600px) {
+        width: 5rem;
+      }
+    }
+  }
+}
+
+#pay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    color: $titleClr;
+    margin-bottom: 5vh;
+    font-weight: 400;
+  }
+  span {
+    color: $clr;
+    font-weight: bolder;
+  }
+  button {
+    width: 8rem;
+    height: 3rem;
+    font-size: 1.8rem;
+    background: $clr;
+    color: white;
+    border-radius: 0.4rem;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(-15deg);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+}
+
+#card-pic {
+  align-self: center;
+  justify-self: center;
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  img {
+    width: 35vw;
+    @include media(600px) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@mixin comicStyles($name) {
+  .#{$name}s {
+    position: absolute;
+    padding: 5vh 2.5vw 5vh 2.5vw;
+    width: 100%;
+    overflow: hidden;
+    //background: white;
+  }
+
+  ##{$name}Covers {
+    img {
+      width: 100%;
+      box-shadow: 0rem 1rem 1.5rem 0.1px rgb(146, 146, 146);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-1%);
+      }
+    }
+
+    h3 {
+      font-size: 1.4vw;
+      margin-top: 2.5vh;
+    }
+    a {
+      color: black;
+    }
+    margin-bottom: 3.5vh;
+  }
+}

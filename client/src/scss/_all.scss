@@ -1,0 +1,10 @@
+@mixin button($width, $height, $fontSize) {
+  width: $width;
+  height: $height;
+  font-size: $fontSize;
+  background: #e62429;
+  clip-path: polygon(8% 0, 100% 0, 100% 70%, 92% 100%, 0 100%, 0 32%);
+  &:hover {
+    background: rgb(141, 11, 11);
+  }
+}
