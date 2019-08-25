@@ -17,6 +17,7 @@ import SignIn from "./components/SignIn";
 import SearchResults from "./components/SearchResults";
 import PayOut from "./components/PayOut";
 import Home from "./components/Home";
+import page404 from "./components/page404";
 
 function App() {
   const [no, setNo] = useState(0);
@@ -63,6 +64,7 @@ function App() {
             <Route path="/searchResults/:searchVal" component={SearchResults} />
             <Route path="/payout" component={PayOut} />
             <Route path="/signin" component={SignIn} />
+            <Route component={page404} />
           </Switch>
         </Router>
       </Context.Provider>
