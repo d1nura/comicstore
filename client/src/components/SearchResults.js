@@ -31,7 +31,6 @@ function SearchResults({ match }) {
     );
   };
   if (data && !loading) {
-    console.log(data);
     return results();
   } else {
     return <Loading />;

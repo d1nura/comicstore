@@ -30,10 +30,8 @@ function SearchBar({ showSearch }) {
   };
   const getFocus = () => {
     setShowResults(true);
-    console.log(showResults);
   };
   document.onclick = e => {
-    // console.log(e.target.innerText);
     if (e.target.value !== title) {
       setShowResults(false);
     }
@@ -44,7 +42,6 @@ function SearchBar({ showSearch }) {
 
   const getEnter = e => {
     if (e.key === "Enter" && e.target.value !== "") {
-      // console.log(e.target.value);
       setRedirect(true);
       setSearchVal(e.target.value);
       setShowResults(false);
@@ -67,7 +64,6 @@ function SearchBar({ showSearch }) {
       <div className="searchResults" style={showResults ? {} : { height: 0 }}>
         {data && !loading && !isEmpty ? (
           data.results.slice(0, 5).map((item, index) => {
-            // console.log(item.id);
             return (
               <Link
                 onClick={hideSearchResults}

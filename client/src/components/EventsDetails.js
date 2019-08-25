@@ -48,7 +48,6 @@ function EventsDetails({ match }) {
   };
 
   if (data && !loading) {
-    console.log(data);
     return details();
   } else {
     return <Loading />;

@@ -18,7 +18,6 @@ function Navbar() {
   let count = 0;
 
   useEffect(() => {
-    console.log("nav");
     axios
       .get("/cartItem/")
       .then(res => {

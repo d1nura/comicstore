@@ -16,6 +16,7 @@ import Cart from "./components/Cart";
 import SignIn from "./components/SignIn";
 import SearchResults from "./components/SearchResults";
 import PayOut from "./components/PayOut";
+import Home from "./components/Home";
 
 function App() {
   const [no, setNo] = useState(0);
@@ -40,7 +41,7 @@ function App() {
         <Router>
           <Navbar />
           <Switch>
-            <Route path="/" exact component={Comics} />
+            <Route path="/" exact component={Home} />
             <Route path="/page/:pageNo" component={Comics} />
             <Route path="/comics/:id" component={ComicDetails} />
             <Route path="/characters" exact component={Characters} />

@@ -14,7 +14,6 @@ export const setNames = (arr, writer, penciler, coverArtist) => {
       case "penciler":
       case "penciler (cover)":
         penciler = arr[i].name;
-        console.log(arr[i].name);
         break;
     }
   }

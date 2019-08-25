@@ -21,8 +21,10 @@ $titleClr: rgb(110, 110, 110);
 
 #information {
   background: white;
-  opacity: 0.95;
+  // opacity: 0.95;
+  border-radius: 1rem;
   overflow: hidden;
+  margin: 5vw;
   h1 {
     margin-bottom: 6vh;
     color: $titleClr;
@@ -32,12 +34,14 @@ $titleClr: rgb(110, 110, 110);
       font-size: 1.8rem;
     }
   }
-  padding: 2rem 5vw 1rem 5vw;
+  padding: 10vh 2.5vw 10vh 2.5vw;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   @include media(600px) {
     // align-items: center;
+    padding: 1vh 2vw 1vh 2vw;
+    margin: 2vw;
   }
 }
 

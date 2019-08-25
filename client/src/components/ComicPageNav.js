@@ -10,7 +10,6 @@ function ComicPageNav() {
   const setOffsetVal = () => {
     setOffset(offset + 20);
     //match.params.pageNo = offset;
-    console.log(context.offsetVal);
   };
   return (
     <div>

@@ -33,7 +33,6 @@ function PublilcComics(props) {
   };
 
   if (data && !loading) {
-    console.log(data);
     return details();
   } else {
     return <Loading />;

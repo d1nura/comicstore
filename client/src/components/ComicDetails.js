@@ -28,7 +28,6 @@ function ComicDetails({ match }) {
         }
       }
     });
-    console.log(12);
   }, [match.params.id]);
 
   const itemBought = () => {

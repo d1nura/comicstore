@@ -8,12 +8,6 @@ function Slider() {
 
   const showNextSlide = () => {
     setX(parseInt(x - 100));
-    // if (n < 4) {
-    //   setX(100 * n);
-    //   setN(n++);
-    // }
-    // if (n > 3) setN(0);
-    // console.log(x);
   };
   console.log(x);
   return (

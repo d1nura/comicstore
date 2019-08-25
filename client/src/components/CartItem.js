@@ -17,19 +17,15 @@ function CartItem(props) {
     if (no > 1) {
       setNo(no - 1);
       context.setCartNo(context.cartNo - 1);
-      // context.setCount(0);
-      // props.setCartTotalNo(cartTotalNo + 1);
+
       axios
         .post(`/cartItem/update/${props.item.comicId}`, {
           count: no - 1
         })
         .then(res => {
           setLoad(false);
-          // context.setRemove(false);
-          console.log(res.data);
         })
         .catch(err => console.log("Err4" + err));
-      // localStorage.setItem("cartNo", localStorage.getItem("cartNo") - 1);
     } else {
       setNo(1);
       setLoad(false);
@@ -39,18 +35,15 @@ function CartItem(props) {
     setLoad(true);
     setNo(no + 1);
     context.setCartNo(context.cartNo + 1);
-    // console.log(context.cartNo + i);
     axios
       .post(`/cartItem/update/${props.item.comicId}`, {
         count: no + 1
       })
       .then(res => {
         setLoad(false);
-        // context.setRemove(e.tartget.innerText);
         console.log(res.data);
       })
       .catch(err => console.log("Err4" + err));
-    // localStorage.setItem("cartNo", localStorage.setItem("cartNo"));
   };
 
   const deleteItem = () => {

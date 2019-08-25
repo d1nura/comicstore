@@ -1,65 +1,26 @@
-import React, { useState, useEffect } from "react";
-import useHttp from "../hooks/http";
-import "../scss/comics.scss";
+import React from "react";
 import { Link } from "react-router-dom";
-import Loading from "./Loading";
-import ScrollToTop from "./ScrollToTop";
 
-function Comics({ match }) {
-  const [offset, setOffset] = useState(260);
-  const [data, loading] = useHttp(
-    `comics?limit=20&offset=${window.location.pathname === "/" ? 260 : offset}&`
-  );
-  // match.params.pageNo = offset;
-  const offsetValMinus = () => {
-    offset >= 260 ? setOffset(offset - 20) : (window.location.pathname = "/");
-    // match.params.pageNo = offset;
-  };
-  const offsetValPlus = () => {
-    setOffset(offset + 20);
-    // match.params.pageNo = offset;
-  };
-
-  useEffect(() => {
-    // console.log(offset);
-  }, []);
-
-  const details = () => {
-    return (
-      <div className="comics">
-        <div id="comicDetails">
-          {data.results.map((item, index) => {
-            return (
-              <div id="comicCovers" key={index}>
-                <Link to={`/comics/${(match.params.id = item.id)}`}>
-                  <img
-                    alt="comic cover"
-                    src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                  />
-                  <h3>{item.title}</h3>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-        <div id="comicBtnSet">
-          <Link to={`/page/${offset}`}>
-            <button onClick={offsetValMinus}>PREV</button>
-          </Link>
-          <Link to={`/page/${offset}`}>
-            <button onClick={offsetValPlus}>NEXT</button>
-          </Link>
-        </div>
-        <ScrollToTop />
+function Comics({ match, data }) {
+  return (
+    <div>
+      <div id="comicDetails">
+        {data.results.map((item, index) => {
+          return (
+            <div id="comicCovers" key={index}>
+              <Link to={`/comics/${(match.params.id = item.id)}`}>
+                <img
+                  alt="comic cover"
+                  src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                />
+                <h3>{item.title}</h3>
+              </Link>
+            </div>
+          );
+        })}
       </div>
-    );
-  };
-
-  if (data && !loading) {
-    return details();
-  } else {
-    return <Loading />;
-  }
+    </div>
+  );
 }
 
 export default React.memo(Comics);
