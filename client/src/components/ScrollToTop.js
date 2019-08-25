@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../scss/scrollToTop.scss";
 
-function ScrollToTop({ cap }) {
-  console.log(cap);
+function ScrollToTop() {
   const [show, setShow] = useState(false);
 
   const scrollTop = () => {

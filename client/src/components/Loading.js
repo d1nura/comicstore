@@ -8,7 +8,7 @@ function Loading() {
       <div className="trs" />
       <div className="loadingA">
         <img src={loading} alt="loading..." />
-        <p>Loading Please Wait...</p>
+        <p>Loading please wait...</p>
       </div>
     </React.Fragment>
   );

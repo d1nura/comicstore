@@ -46,7 +46,7 @@ function PayOut() {
               $
               {context.totalPrice === 0
                 ? localStorage.getItem("tPrice")
-                : context.totalPrice}
+                : context.totalPrice.toFixed(2)}
             </span>
           </h2>
           <button>PAY</button>

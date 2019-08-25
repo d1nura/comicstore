@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import useHttp from "../hooks/http";
 import axios from "axios";
 import ripple from "../logos/ripple.svg";
@@ -12,19 +12,6 @@ function CartItem(props) {
 
   const context = useContext(Context);
 
-  // props.setPrice(ref.current.innerText);
-  useEffect(() => {
-    // if (!loading && data) {
-    //   props.setPrice(data.results[0].prices[0].price * no);
-    //   context.setTotalPrice(data.results[0].prices[0].price * no);
-    //   // console.log(data.results[0].prices[0].price * no);
-    // }
-  }, []);
-  //context.setCartNo(no);
-  // useEffect(() => {
-  //   //context.setCartNo(no);
-  // }, [context.cartNo]);
-  //context.setCartNo(no);
   const removeCountItem = () => {
     setLoad(true);
     if (no > 1) {
@@ -90,10 +77,10 @@ function CartItem(props) {
         style={removeDiv ? { display: "none" } : {}}
       >
         <div id="smallCoverPic">
-          {/* <img
+          <img
             src={`${data.results[0].thumbnail.path}/portrait_medium.jpg`}
             alt="comic cover"
-          /> */}
+          />
         </div>
 
         <p id="itemTitle">{data.results[0].title}</p>
@@ -114,7 +101,9 @@ function CartItem(props) {
           <p>
             $
             <span>
-              {parseFloat(data.results[0].prices[0].price * no).toFixed(2)}
+              {data.results[0].prices[0].price !== 0
+                ? parseFloat(data.results[0].prices[0].price * no).toFixed(2)
+                : 3.99 * no}
             </span>
           </p>
           <button id="delete" onClick={deleteItem}>
@@ -126,10 +115,9 @@ function CartItem(props) {
   };
 
   if (data && !loading) {
-    //  console.log(data);
-    // console.log(props.item);
-    // context.setTotalPrice(data.results[0].prices[0].price * no);
-    props.setPrice(data.results[0].prices[0].price * no);
+    data.results[0].prices[0].price !== 0
+      ? props.setPrice(data.results[0].prices[0].price * no)
+      : props.setPrice(3.99 * no);
     return details();
   } else {
     return (

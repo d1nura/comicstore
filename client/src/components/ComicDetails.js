@@ -137,7 +137,6 @@ function ComicDetails({ match }) {
               {data.results[0].prices[0].price !== 0
                 ? data.results[0].prices[0].price
                 : 3.99}
-              {/* ${data.results[0].prices[0].price} */}
             </h1>
             <button
               disabled={disable}

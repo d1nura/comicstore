@@ -15,19 +15,19 @@
   height: 100vh;
   z-index: 21;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   justify-content: center;
   align-items: center;
   //   filter: blur(1px);
   img {
-    background: rgb(0, 0, 0);
+    // background: rgb(0, 0, 0);
     border-radius: 14rem;
     width: 6rem;
     z-index: 21;
-    margin-bottom: 1rem;
+    margin-right: 2vw;
   }
   p {
     font-size: 1.2rem;
-    color: rgb(187, 187, 187);
+    color: rgb(216, 216, 216);
   }
 }

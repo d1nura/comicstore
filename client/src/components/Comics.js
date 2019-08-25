@@ -7,21 +7,22 @@ import ScrollToTop from "./ScrollToTop";
 
 function Comics({ match }) {
   const [offset, setOffset] = useState(260);
-
-  match.params.pageNo = offset;
+  const [data, loading] = useHttp(
+    `comics?limit=20&offset=${window.location.pathname === "/" ? 260 : offset}&`
+  );
+  // match.params.pageNo = offset;
   const offsetValMinus = () => {
-    offset >= 260 ? setOffset(match.params.pageNo - 20) : setOffset(260);
-    match.params.pageNo = offset;
+    offset >= 260 ? setOffset(offset - 20) : (window.location.pathname = "/");
+    // match.params.pageNo = offset;
   };
   const offsetValPlus = () => {
     setOffset(offset + 20);
-    match.params.pageNo = offset;
+    // match.params.pageNo = offset;
   };
 
-  const [data, loading] = useHttp(
-    `comics?limit=20&offset=${match.params.pageNo}&`
-  );
-  useEffect(() => {}, [offset]);
+  useEffect(() => {
+    // console.log(offset);
+  }, []);
 
   const details = () => {
     return (
