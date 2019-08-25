@@ -1,6 +1,6 @@
 .page404 {
   position: fixed;
-  background: rgb(235, 25, 88);
+  background: rgb(0, 0, 0);
   width: 100%;
   height: 85vh;
   color: white;
@@ -8,36 +8,58 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation-name: colors;
-  animation-duration: 2s;
+  animation-name: bac;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
+
   span {
     font-size: 10vw;
   }
   h1 {
     font-size: 2vw;
     margin-bottom: 2rem;
+    animation-name: colors;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
   }
   a {
     font-size: 1.5vw;
-    color: rgb(255, 220, 220);
+    color: rgb(255, 255, 255);
   }
 }
 
 @keyframes colors {
   0% {
-    background: rgb(223, 186, 23);
+    color: rgb(185, 173, 3);
   }
   25% {
-    background: rgb(233, 88, 21);
+    color: rgb(175, 19, 19);
   }
   50% {
-    background: rgb(214, 17, 17);
+    color: rgb(12, 23, 180);
   }
   75% {
-    background: rgb(125, 236, 14);
+    color: rgb(0, 255, 221);
   }
   100% {
-    background: rgb(130, 22, 219);
+    color: rgb(23, 187, 8);
+  }
+}
+
+@keyframes bac {
+  0% {
+    background: rgb(255, 247, 136);
+  }
+  25% {
+    background: rgb(255, 131, 131);
+  }
+  50% {
+    background: rgb(136, 144, 255);
+  }
+  75% {
+    background: rgb(120, 255, 237);
+  }
+  100% {
+    background: rgb(144, 255, 134);
   }
 }
