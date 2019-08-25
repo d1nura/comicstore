@@ -12,19 +12,23 @@ function SearchResults({ match }) {
     return (
       <div className="comics">
         <div id="comicDetails">
-          {data.results.map((item, index) => {
-            return (
-              <div id="comicCovers" key={index}>
-                <Link to={`/comics/${(match.params.id = item.id)}`}>
-                  <img
-                    alt="comic cover"
-                    src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                  />
-                  <h3>{item.title}</h3>
-                </Link>
-              </div>
-            );
-          })}
+          {data.results.length > 0 ? (
+            data.results.map((item, index) => {
+              return (
+                <div id="comicCovers" key={index}>
+                  <Link to={`/comics/${(match.params.id = item.id)}`}>
+                    <img
+                      alt="comic cover"
+                      src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                    />
+                    <h3>{item.title}</h3>
+                  </Link>
+                </div>
+              );
+            })
+          ) : (
+            <h1>Sorry, No results Found!</h1>
+          )}
         </div>
         <ScrollToTop />
       </div>
