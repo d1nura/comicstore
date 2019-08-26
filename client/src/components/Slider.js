@@ -7,16 +7,9 @@ import { Link } from "react-router-dom";
 function Slider({ match }) {
   const [move, setMove] = useState(0);
   const [data, loading] = useHttp("comics?limit=4&offset=220&");
-  // const ref1 = useRef(null);
-  // const ref2 = useRef(null);
-  // const ref3 = useRef(null);
-  // const ref4 = useRef(null);
-  // const dots = useRef(null);
-  // const refArr = [ref1, ref2, ref3, ref4];
+
   const moveSlides = () => {
     move >= 300 ? setMove(0) : setMove(move + 100);
-
-    console.log(move);
   };
 
   const addVal1 = () => {
@@ -65,12 +58,14 @@ function Slider({ match }) {
           </div>
           <div className="slides">
             {data.results.map((item, index) => {
-              console.log(item);
               return (
                 <div
                   id="slide"
                   key={index}
-                  style={{ transform: `translate(-${move}%)` }}
+                  style={{
+                    transform: `translate(-${move}%)`,
+                    backgroundImage: `url("${item.images[0].path}.${item.images[0].extension}")`
+                  }}
                 >
                   <div id="slideTitle">
                     <h1>{item.title}</h1>
@@ -79,9 +74,6 @@ function Slider({ match }) {
                     </Link>
                   </div>
                   <div id="shadowCover"></div>
-                  <img
-                    src={`${item.images[0].path}.${item.images[0].extension}`}
-                  />
                 </div>
               );
             })}
