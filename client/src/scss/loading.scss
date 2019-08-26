@@ -20,7 +20,7 @@
   align-items: center;
   //   filter: blur(1px);
   img {
-    // background: rgb(0, 0, 0);
+    background: rgb(0, 0, 0);
     border-radius: 14rem;
     width: 6rem;
     z-index: 21;
@@ -28,6 +28,7 @@
   }
   p {
     font-size: 1.2rem;
-    color: rgb(216, 216, 216);
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
   }
 }

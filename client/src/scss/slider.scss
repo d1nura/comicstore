@@ -1,24 +1,117 @@
+@import "all";
+$height: 90vh;
+
 .slider {
-  position: absolute;
+  position: relative;
+  top: 0vh;
   width: 100%;
-  height: 80vh;
-  border: 1px solid red;
+  height: $height;
+  overflow: hidden;
+  background: black;
+
+  margin-bottom: 2rem;
+}
+
+.slides {
+  // background: red;
+  width: 100%;
+  height: $height;
   display: flex;
 }
 
 #slide {
-  border: 1px solid green;
-  min-width: 92vw;
-  height: 100%;
+  // border: 1px solid green;
+  min-width: 92%;
+  height: $height;
   transition: 0.5s;
+  img {
+    position: relative;
+    top: -30vh;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+  #shadowCover {
+    position: absolute;
+    background: black;
+    width: 100%;
+    height: $height;
+    opacity: 0.6;
+    z-index: 9;
+    // box-shadow: -1rem -2rem 2rem 2rem rgb(0, 0, 0);
+  }
+  #slideTitle {
+    position: absolute;
+    top: 50%;
+    left: 2.5vw;
+    transform: translateY(-60%);
+    z-index: 10;
+  }
+  h1 {
+    color: white;
+    line-height: 4vw;
+    text-transform: uppercase;
+    width: 50vw;
+    font-size: 3vw;
+    margin-bottom: 1rem;
+  }
+  button {
+    @include button(10rem, 3rem, 1.2vw);
+    background: none;
+    color: white;
+    border: 2px solid white;
+    text-transform: uppercase;
+    &:hover {
+      border: 2px solid rgb(102, 102, 102);
+      background: none;
+    }
+  }
 }
 
-#nextSlide {
+.right-arrow {
   position: absolute;
-  background: rgb(198, 198, 255);
-  width: 8vw;
-  height: 100%;
+  width: 8%;
+  height: $height;
+  // border: 1px solid black;
   right: 0;
-  border: 1px solid lawngreen;
   z-index: 10;
+  background: black;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  img {
+    position: relative;
+    width: 3.8rem;
+    transform: rotate(-90deg);
+  }
+}
+
+.dots {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  left: 50%;
+  z-index: 20;
+  transform: translateX(-50%);
+  #dot {
+    margin: 0 0.4rem 1vw 0rem;
+    width: 1.4rem;
+    height: 0.4rem;
+    background: rgb(177, 177, 177);
+    cursor: pointer;
+  }
+}
+
+#loadingSlider {
+  width: 100%;
+  min-height: 20vh;
+  background: black;
+  h1 {
+    color: rgb(224, 224, 224);
+    padding: 2.5vw;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }

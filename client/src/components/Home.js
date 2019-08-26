@@ -4,6 +4,7 @@ import ScrollToTop from "./ScrollToTop";
 import useHttp from "../hooks/http";
 import Loading from "./Loading";
 import "../scss/comics.scss";
+import Slider from "./Slider";
 
 function Home({ match }) {
   const [offset, setOffset] = useState(260);
@@ -18,14 +19,17 @@ function Home({ match }) {
 
   const results = () => {
     return (
-      <div className="comics">
-        <Comics match={match} data={data} />
-        <div id="comicBtnSet">
-          <button onClick={removeOffset}>PREV</button>
-          <button onClick={addOffset}>NEXT</button>
+      <React.Fragment>
+        <Slider match={match} />
+        <div className="comics">
+          <Comics match={match} data={data} />
+          <div id="comicBtnSet">
+            <button onClick={removeOffset}>PREV</button>
+            <button onClick={addOffset}>NEXT</button>
+          </div>
+          <ScrollToTop />
         </div>
-        <ScrollToTop />
-      </div>
+      </React.Fragment>
     );
   };
   if (data && !loading) {
